@@ -203,6 +203,11 @@ brew install --cask font-source-sans-pro
 brew install --cask font-source-serif-pro
 
 echo '--'
+echo 'Install Notion'
+echo '--'
+brew install --cask notion
+
+echo '--'
 echo 'Install Mac App Store cli'
 echo '--'
 brew install mas
