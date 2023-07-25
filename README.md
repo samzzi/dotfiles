@@ -1,6 +1,7 @@
 # My personal dotfiles
 
-Based on Freek Murze's dotfiles. Check out his [blog post](https://freek.dev/uses) for more information.
+Based and inspired on Freek Murze's and Dries Vints their dotfiles.
+Check out Freek's [blog post](https://freek.dev/uses) or Dries his [repo](https://github.com/driesvints/dotfiles/) for more information.
 
 # Tools used
 

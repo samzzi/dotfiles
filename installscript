@@ -241,6 +241,12 @@ git config --global core.excludesfile $HOME/.global-gitignore
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 
+########################
+## SETUP BASE SITES's ##
+########################
+
+.$HOME/.dotfiles/misc/addsites.sh
+
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
 echo 'All done!'
