@@ -1,24 +1,8 @@
 #!/bin/bash
 
-# Hide "last login" line when starting a new terminal session
-touch $HOME/.hushlogin
-
-# Install zsh
-echo 'Install oh-my-zsh'
-echo '-----------------'
-rm -rf $HOME/.oh-my-zsh
-curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-
-# Add global gitignore
-ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
-git config --global core.excludesfile $HOME/.global-gitignore
-
-# Symlink zsh prefs
-rm $HOME/.zshrc
-ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
-
-# Symlink the Mackup config
-ln -s $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
+##############################
+## INSTALL PACKAGE MANAGERS ##
+##############################
 
 echo '--'
 echo 'Install homebrew'
@@ -30,10 +14,32 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo '--'
+echo 'Install Mac App Store cli'
+echo '--'
+brew install mas
+
+# Symlink the Mackup config
+ln -s $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
+
+echo '--'
+echo 'Install mackup'
+echo '--'
+brew install mackup
+
+###############################
+## INSTALL DEVELOPMENT TOOLS ##
+###############################
+
+echo '--'
 echo 'Install iterm2'
 echo '--'
 
 brew install --cask iterm2
+
+echo 'Install oh-my-zsh'
+echo '-----------------'
+rm -rf $HOME/.oh-my-zsh
+curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 echo '--'
 echo 'Install nvm'
@@ -98,19 +104,38 @@ echo '--'
 brew install yarn
 
 echo '--'
+echo 'Install VScode'
+echo '--'
+brew install --cask visual-studio-code
+
+echo '--'
+echo 'Install raycast'
+echo '--'
+brew install --cask raycast
+
+echo '--'
+echo 'Install fig'
+echo '--'
+brew install --cask fig
+
+echo '--'
+echo 'Install github cli'
+echo '--'
+brew install gh
+
+echo '--'
+echo 'Install Ray'
+echo '--'
+brew install --cask ray
+
+##############################
+## INSTALL GENERAL SOFTWARE ##
+##############################
+
+echo '--'
 echo 'Install ghostscript'
 echo '--'
 brew install ghostscript
-
-echo '--'
-echo 'Install mackup'
-echo '--'
-brew install mackup
-
-echo '--'
-echo 'Install zsh-autosuggestions'
-echo '--'
-brew install zsh-autosuggestions
 
 echo '--'
 echo 'Install affinity photo'
@@ -143,21 +168,6 @@ echo '--'
 brew install --cask discord
 
 echo '--'
-echo 'Install VScode'
-echo '--'
-brew install --cask visual-studio-code
-
-echo '--'
-echo 'Install raycast'
-echo '--'
-brew install --cask raycast
-
-echo '--'
-echo 'Install fig'
-echo '--'
-brew install --cask fig
-
-echo '--'
 echo 'Install screenflow'
 echo '--'
 brew install --cask screenflow
@@ -183,16 +193,6 @@ echo '--'
 brew install --cask figma
 
 echo '--'
-echo 'Install github cli'
-echo '--'
-brew install gh
-
-echo '--'
-echo 'Install Ray'
-echo '--'
-brew install --cask ray
-
-echo '--'
 echo 'Install Fonts'
 echo '--'
 brew install --cask font-lato
@@ -207,14 +207,14 @@ echo 'Install Notion'
 echo '--'
 brew install --cask notion
 
-echo '--'
-echo 'Install Mac App Store cli'
-echo '--'
-brew install mas
+###############################
+## INSTALL MAC STORE SHIZZLE ##
+###############################
 
 echo '--'
 echo 'Install Mac App store apps'
 echo '--'
+
 mas install 1278508951 # trello
 mas install 1444383602 # Good notes
 mas install 975937182 # Fantastical
@@ -225,6 +225,21 @@ mas install 1491071483 # Tot
 mas install 585829637 # Todoist
 mas install 1147396723 # Whatsapp
 
+###########################
+## DO SOME GENERAL STUFF ##
+###########################
+
+# Hide "last login" line when starting a new terminal session
+touch $HOME/.hushlogin
+
+# Add global gitignore
+ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
+git config --global core.excludesfile $HOME/.global-gitignore
+
+# Symlink zsh prefs
+rm $HOME/.zshrc
+ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
+
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
 echo 'All done!'
@@ -232,6 +247,5 @@ echo 'Things to do to:'
 echo '1. Install monalisa font included in ~/.dotfiles/misc'
 echo '2. If you have not backed up via Mackup yet, then run `mackup backup` to symlink preferences for a wide collection of apps to your dropbox. If you already had a backup via mackup run `mackup restore` You will find more info on Mackup here: https://github.com/lra/mackup.'
 echo '3. Set some sensible os x defaults by running: $HOME/.dotfiles/macos/set-defaults.sh'
-
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
