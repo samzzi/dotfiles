@@ -1,0 +1,147 @@
+# Create a new directory and enter it
+function mkd() {
+    mkdir -p "$@" && cd "$@"
+}
+
+# All the dig info
+function digga() {
+    dig +nocmd "$1" any +multiline +noall +answer
+}
+
+function tinker() {
+    if [ -z "$1" ]; then
+        php artisan tinker
+    else
+        php artisan tinker --execute="dd($1);"
+    fi
+}
+
+#shortcut voor zhs quick-look command
+function ql() {
+    quick-look "$1"
+}
+
+archive() {
+    zip -r "$1".zip -i "$1"
+}
+
+function removehost() {
+    ssh-keygen -R "$1"
+}
+
+function weather() {
+    local city="${1:-Antwerp}"
+    curl http://wttr.in/${city// /+}\?F
+}
+
+alias mysqladm='mysql -u root'
+
+# Scrape a single webpage with all assets
+function scrapeUrl() {
+    wget --adjust-extension --convert-links --page-requisites --span-hosts --no-host-directories "$1"
+}
+
+#  Commit everything
+function commit() {
+    commitMessage="$*"
+
+    git add .
+
+    if [ "$commitMessage" = "" ]; then
+        aicommits
+        return
+    fi
+
+    eval "git commit -a -m '${commitMessage}'"
+}
+
+function push() {
+    commitMessage="$*"
+
+    git add .
+
+    if [ "$commitMessage" = "" ]; then
+        aicommits
+        return
+    fi
+
+    eval "git commit -a -m '${commitMessage}'"
+    git push
+}
+
+function release() {
+    composer_json="composer.json"
+    new_version="$1"
+
+    if [[ ! -f "$composer_json" ]]; then
+        echo "❌ ️Error: composer.json file not found."
+        return 1
+    fi
+
+    if [[ -z "$new_version" ]]; then
+        echo "✅ ️Increment composer version"
+
+        current_version=$(jq -r '.version' "$composer_json")
+        new_version=$(awk -F. -v OFS=. '{$NF++;print}' <<<"$current_version")
+    else
+        echo "✅ ️Using given version $new_version"
+    fi
+
+    jq --arg new_version "$new_version" '.version = $new_version' "$composer_json" >temp.json
+    mv temp.json "$composer_json"
+
+    echo "✅ Add to git"
+
+    git add . >/dev/null 2>&1
+    git commit -m "New release $new_version" >/dev/null 2>&1
+    git push >/dev/null 2>&1
+
+    echo "✅ Create new release"
+
+    gh release create $new_version --generate-notes >/dev/null 2>&1
+
+    echo "🚀 Updated package from $current_version to $new_version"
+}
+
+function db {
+    if [ "$1" = "refresh" ]; then
+        mysql -uroot -e "drop database $2; create database $2"
+    elif [ "$1" = "create" ]; then
+        mysql -uroot -e "create database $2"
+    elif [ "$1" = "drop" ]; then
+        mysql -uroot -e "drop database $2"
+    elif [ "$1" = "list" ]; then
+        mysql -uroot -e "show databases" | perl -p -e's/\|| *//g'
+    fi
+}
+
+function opendb() {
+    [ ! -f .env ] && {
+        echo "No .env file found."
+        exit 1
+    }
+
+    DB_CONNECTION=$(grep DB_CONNECTION .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
+    DB_HOST=$(grep DB_HOST .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
+    DB_PORT=$(grep DB_PORT .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
+    DB_DATABASE=$(grep DB_DATABASE .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
+    DB_USERNAME=$(grep DB_USERNAME .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
+    DB_PASSWORD=$(grep DB_PASSWORD .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
+
+    DB_URL="${DB_CONNECTION}://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE}"
+
+    echo "Opening ${DB_URL}"
+    open $DB_URL
+}
+
+function scheduler() {
+    while :; do
+        php artisan schedule:run
+        echo "Sleeping 60 seconds..."
+        sleep 60
+    done
+}
+
+function silent() {
+    "$@" >&/dev/null
+}
