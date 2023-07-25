@@ -232,7 +232,6 @@ echo 'Things to do to:'
 echo '1. Install monalisa font included in ~/.dotfiles/misc'
 echo '2. If you have not backed up via Mackup yet, then run `mackup backup` to symlink preferences for a wide collection of apps to your dropbox. If you already had a backup via mackup run `mackup restore` You will find more info on Mackup here: https://github.com/lra/mackup.'
 echo '3. Set some sensible os x defaults by running: $HOME/.dotfiles/macos/set-defaults.sh'
-echo '4. Make a .dotfiles-custom/shell/.aliases for your personal commands'
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
