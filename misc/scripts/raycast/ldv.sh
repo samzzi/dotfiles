@@ -12,4 +12,4 @@
 # @raycast.author Sam Serrien
 # @raycast.authorURL https://github.com/samzzi
 
-open -n -a "Google Chrome" --args --profile-directory="Profile 5"
+open -n -a "Google Chrome" --args --profile-directory="LDV"
