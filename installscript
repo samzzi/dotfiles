@@ -30,6 +30,12 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo '--'
+echo 'Install iterm2'
+echo '--'
+
+brew install --cask iterm2
+
+echo '--'
 echo 'Install nvm'
 echo '--'
 brew install nvm
@@ -204,15 +210,15 @@ brew install mas
 echo '--'
 echo 'Install Mac App store apps'
 echo '--'
-mas 'Trello', id: 1278508951
-mas 'GoodNotes', id: 1444383602
-mas 'Fantastical', id: 975937182
-mas 'Kaleidoscope', id: 1575557335
-mas 'Bear', id: 1091189122
-mas 'LittleIpsum', id: 405772121
-mas 'Tot', id: 1491071483
-mas 'Todoist', id: 585829637
-mas 'Whatsapp', id: 1147396723
+mas install 1278508951 # trello
+mas install 1444383602 # Good notes
+mas install 975937182 # Fantastical
+mas install 1575557335 # Kaleidoscope
+mas install 1091189122 # Bear
+mas install 405772121 # LittleIpsum
+mas install 1491071483 # Tot
+mas install 585829637 # Todoist
+mas install 1147396723 # Whatsapp
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
