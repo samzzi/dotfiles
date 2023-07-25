@@ -20,144 +20,173 @@ ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 # Symlink the Mackup config
 ln -s $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
 
+echo '--'
 echo 'Install homebrew'
-echo '----------------'
+echo '--'
 echo install homebrew
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+echo '--'
 echo 'Install nvm'
 echo '--'
 brew install nvm
 
+echo '--'
 echo 'Configure npm'
-echo '-------------'
+echo '--'
 # Create a directory for global packages and tell npm where to store globally installed packages
 mkdir "${HOME}/.npm-packages"
 npm config set prefix "${HOME}/.npm-packages"
 
+echo '--'
 echo 'Install wget'
 echo '--'
 brew install wget
 
+echo '--'
 echo 'Install ncdu'
 echo '------------'
 brew install ncdu
 
+echo '--'
 echo 'Install ack'
 echo '--'
 brew install ack
 
+echo '--'
 echo 'Install some nice quicklook plugins'
 echo '--'
 brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv
 
+echo '--'
 echo 'Install herd'
 echo '------------'
 brew install --cask herd
 
+echo '--'
 echo 'Install tinkerwell'
 echo '--'
 brew install --cask tinkerwell
 
+echo '--'
 echo 'Install helo'
 echo '--'
 brew install --cask helo
 
+echo '--'
 echo 'Install aicommits'
 echo '--'
 npm install -g aicommits
 
+echo '--'
 echo 'Install DBngin'
 echo '--'
 brew install --cask dbngin
 
+echo '--'
 echo 'Install yarn'
 echo '--'
 brew install yarn
 
+echo '--'
 echo 'Install ghostscript'
 echo '--'
 brew install ghostscript
 
+echo '--'
 echo 'Install mackup'
 echo '--'
 brew install mackup
 
+echo '--'
 echo 'Install zsh-autosuggestions'
 echo '--'
 brew install zsh-autosuggestions
 
+echo '--'
 echo 'Install affinity photo'
 echo '--'
 brew install --cask affinity-photo
 
+echo '--'
 echo 'Install affinity designer'
 echo '--'
 brew install --cask affinity-designer
 
+echo '--'
 echo 'Install setapp'
 echo '--'
 brew install --cask setapp
 
-echo 'Install fantastical'
 echo '--'
-brew install --cask fantastical
-
 echo 'Install missive'
 echo '--'
 brew install --cask missive
 
+echo '--'
 echo 'Install 1password'
 echo '--'
 brew install --cask 1password
 
+echo '--'
 echo 'Install discord'
 echo '--'
 brew install --cask discord
 
+echo '--'
 echo 'Install VScode'
 echo '--'
 brew install --cask visual-studio-code
 
+echo '--'
 echo 'Install raycast'
 echo '--'
 brew install --cask raycast
 
+echo '--'
 echo 'Install fig'
 echo '--'
 brew install --cask fig
 
+echo '--'
 echo 'Install screenflow'
 echo '--'
 brew install --cask screenflow
 
+echo '--'
 echo 'Install Office'
 echo '--'
 brew install --cask microsoft-office
 
+echo '--'
 echo 'Install Google drive'
 echo '--'
 brew install --cask google-drive
 
+echo '--'
 echo 'Install google chrome'
 echo '--'
 brew install --cask google-chrome
 
+echo '--'
 echo 'Install figma'
 echo '--'
 brew install --cask figma
 
+echo '--'
 echo 'Install github cli'
 echo '--'
 brew install gh
 
+echo '--'
 echo 'Install Ray'
 echo '--'
 brew install --cask ray
 
+echo '--'
 echo 'Install Fonts'
 echo '--'
 brew install --cask font-lato
@@ -167,10 +196,12 @@ brew install --cask font-source-code-pro
 brew install --cask font-source-sans-pro
 brew install --cask font-source-serif-pro
 
+echo '--'
 echo 'Install Mac App Store cli'
 echo '--'
 brew install mas
 
+echo '--'
 echo 'Install Mac App store apps'
 echo '--'
 mas 'Trello', id: 1278508951
@@ -182,7 +213,6 @@ mas 'LittleIpsum', id: 405772121
 mas 'Tot', id: 1491071483
 mas 'Todoist', id: 585829637
 mas 'Whatsapp', id: 1147396723
-
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
