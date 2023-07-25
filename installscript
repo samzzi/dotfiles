@@ -77,6 +77,7 @@ echo '--'
 echo 'Install herd'
 echo '------------'
 brew install --cask herd
+expose default-domain local.gnx.cloud --server=eu-1
 
 echo '--'
 echo 'Install tinkerwell'
