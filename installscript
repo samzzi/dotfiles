@@ -240,8 +240,6 @@ ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 ## SETUP BASE SITES's ##
 ########################
 
-.$HOME/.dotfiles/misc/addsites.sh
-
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
 echo 'All done!'
