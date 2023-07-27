@@ -194,19 +194,14 @@ echo '--'
 brew install --cask figma
 
 echo '--'
-echo 'Install Fonts'
-echo '--'
-brew install --cask font-lato
-brew install --cask font-open-sans
-brew install --cask font-roboto
-brew install --cask font-source-code-pro
-brew install --cask font-source-sans-pro
-brew install --cask font-source-serif-pro
-
-echo '--'
 echo 'Install Notion'
 echo '--'
 brew install --cask notion
+
+echo '--'
+echo 'Install Facebook messenger'
+echo '--'
+brew install --cask messenger
 
 ###############################
 ## INSTALL MAC STORE SHIZZLE ##
