@@ -81,5 +81,9 @@ export PATH=~/.fig/bin:$PATH
 ## DISABLE auto cd
 unsetopt autocd
 
+# Herd injected PHP binary.
+export PATH="/Users/sam/Library/Application Support/Herd/bin/":$PATH
+export PHP_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/":$PHP_INI_SCAN_DIR
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
