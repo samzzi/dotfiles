@@ -78,5 +78,8 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH=~/.local/bin:$PATH
 export PATH=~/.fig/bin:$PATH
 
+## DISABLE auto cd
+unsetopt autocd
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
