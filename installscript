@@ -207,6 +207,11 @@ echo 'Install Facebook messenger'
 echo '--'
 brew install --cask messenger
 
+echo '--'
+echo 'Install spotify'
+echo '--'
+brew install --cask spotify
+
 ###############################
 ## INSTALL MAC STORE SHIZZLE ##
 ###############################
