@@ -212,6 +212,11 @@ echo 'Install spotify'
 echo '--'
 brew install --cask spotify
 
+echo '--'
+echo 'Install Microsoft Teams'
+echo '--'
+brew install --cask microsoft-teams
+
 ###############################
 ## INSTALL MAC STORE SHIZZLE ##
 ###############################
