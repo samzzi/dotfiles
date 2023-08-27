@@ -69,6 +69,7 @@ function push() {
     git push
 }
 
+# brew install jq needed for this
 function release() {
     composer_json="composer.json"
     new_version="$1"

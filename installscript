@@ -73,6 +73,11 @@ echo '--'
 brew install ack
 
 echo '--'
+echo 'Install jq'
+echo '--'
+brew install jq
+
+echo '--'
 echo 'Install some nice quicklook plugins'
 echo '--'
 brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv
