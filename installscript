@@ -222,6 +222,11 @@ echo 'Install Microsoft Teams'
 echo '--'
 brew install --cask microsoft-teams
 
+echo '--'
+echo 'Install Handbrake'
+echo '--'
+brew install handbrake
+
 ###############################
 ## INSTALL MAC STORE SHIZZLE ##
 ###############################
