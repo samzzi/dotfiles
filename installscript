@@ -138,6 +138,11 @@ echo 'Install Ray'
 echo '--'
 brew install --cask ray
 
+echo '--'
+echo 'Install MySQL tools'
+echo '--'
+brew install mysql-client
+
 ##############################
 ## INSTALL GENERAL SOFTWARE ##
 ##############################

@@ -77,6 +77,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH=~/.local/bin:$PATH
 export PATH=~/.fig/bin:$PATH
+export PATH=/opt/homebrew/opt/mysql-client/bin:$PATH
 
 ## DISABLE auto cd
 unsetopt autocd
