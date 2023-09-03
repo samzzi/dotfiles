@@ -43,8 +43,8 @@ function scrapeUrl() {
 
 function gitExport() {
     for file in $(git diff --name-only $1 $2); do
-        mkdir -p $(dirname "exported_files/$file")
-        cp "$file" "exported_files/$file"
+        mkdir -p $(dirname "gitexport/$file")
+        cp "$file" "gitexport/$file"
     done
 }
 
