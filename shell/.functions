@@ -41,6 +41,13 @@ function scrapeUrl() {
     wget --adjust-extension --convert-links --page-requisites --span-hosts --no-host-directories "$1"
 }
 
+function gitExport() {
+    for file in $(git diff --name-only $1 $2); do
+        mkdir -p $(dirname "exported_files/$file")
+        cp "$file" "exported_files/$file"
+    done
+}
+
 #  Commit everything
 function commit() {
     commitMessage="$*"
@@ -115,6 +122,7 @@ function db {
         mysql -uroot -e "show databases" | perl -p -e's/\|| *//g'
     fi
 }
+
 
 function opendb() {
     [ ! -f .env ] && {
