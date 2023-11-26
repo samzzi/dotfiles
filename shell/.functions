@@ -154,3 +154,13 @@ function scheduler() {
 function silent() {
     "$@" >&/dev/null
 }
+
+function localPlugin() {
+    rm -rf plugins/$1
+    ln -s ~/workspaces/kirby/$1 plugins/$1
+}
+
+function gitPlugin() {
+    rm -rf plugins/$1
+    composer install;
+}

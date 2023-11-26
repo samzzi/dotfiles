@@ -47,3 +47,7 @@ alias sudo='sudo '
 
 # Scape webpage
 alias scrape="scrapeUrl"
+
+# Working on Kirby plugins
+alias localPlugin="localPlugin"
+alias gitPlugin="gitPlugin"
