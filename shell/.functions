@@ -158,9 +158,11 @@ function silent() {
 function localPlugin() {
     rm -rf plugins/$1
     ln -s ~/workspaces/kirby/$1 plugins/$1
+    echo "✅ ️Plugin replaced with the local version"
 }
 
 function gitPlugin() {
     rm -rf plugins/$1
     composer install;
+    echo "✅ ️Plugin replaced with the git version"
 }
