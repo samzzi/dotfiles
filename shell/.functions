@@ -166,3 +166,9 @@ function gitPlugin() {
     composer install;
     echo "✅ ️Plugin replaced with the git version"
 }
+
+function decrypt() {
+    for file in ./*.gpg; do
+        gpg --decrypt -o "${file%.*}" "$file"
+    done
+}
