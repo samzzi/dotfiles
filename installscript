@@ -114,6 +114,11 @@ echo '--'
 brew install yarn
 
 echo '--'
+echo 'Install memory (timely)'
+echo '--'
+brew install --cask memory
+
+echo '--'
 echo 'Install VScode'
 echo '--'
 brew install --cask visual-studio-code
@@ -244,9 +249,10 @@ mas install 1278508951 # trello
 mas install 1444383602 # Good notes
 mas install 975937182 # Fantastical
 mas install 1575557335 # Kaleidoscope
-mas install 1091189122 # Bear
+#mas install 1091189122 # Bear
 mas install 405772121 # LittleIpsum
-mas install 1491071483 # Tot
+# mas install 1491071483 # Tot
+mas install 1398373917 # UpNote
 mas install 585829637 # Todoist
 mas install 1147396723 # Whatsapp
 
@@ -272,5 +278,6 @@ echo 'Things to do to:'
 echo '1. Install monalisa font included in ~/.dotfiles/misc'
 echo '2. If you have not backed up via Mackup yet, then run `mackup backup` to symlink preferences for a wide collection of apps to your dropbox. If you already had a backup via mackup run `mackup restore` You will find more info on Mackup here: https://github.com/lra/mackup.'
 echo '3. Set some sensible os x defaults by running: $HOME/.dotfiles/macos/set-defaults.sh'
+echo '4. Symlink .dotfiles/shell/.zshrc'
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
