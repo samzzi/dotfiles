@@ -23,5 +23,6 @@ cd ~/.dotfiles
 * If you have not backed up via Mackup yet, then run `mackup backup` to symlink preferences for a wide collection of apps to your dropbox. If you already had a backup via mackup run `mackup restore` You will find more info on Mackup here: https://github.com/lra/mackup.
 * Set some sensible os x defaults by running: $HOME/.dotfiles/macos/set-defaults.sh
 * (dubbelcheck) Symlink .dotfiles/shell/.zshrc
+* Install setapp apps
 
 ```
