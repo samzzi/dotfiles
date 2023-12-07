@@ -156,15 +156,22 @@ function silent() {
 }
 
 function localPlugin() {
-    rm -rf plugins/$1
-    ln -s ~/workspaces/kirby/$1 plugins/$1
-    echo "✅ ️Plugin replaced with the local version"
+    for plugin in "$@"
+    do
+        rm -rf "plugins/$plugin"
+        ln -s ~/workspaces/kirby/"$plugin" "plugins/$plugin"
+        echo "✅ ️Plugin '$plugin' replaced with the local version"
+    done
 }
 
+
 function gitPlugin() {
-    rm -rf plugins/$1
+    for plugin in "$@"
+    do
+        rm -rf "plugins/$plugin"
+        echo "✅ ️Plugin '$plugin' replaced with the git version"
+    done
     composer install;
-    echo "✅ ️Plugin replaced with the git version"
 }
 
 function decrypt() {
