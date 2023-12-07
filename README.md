@@ -15,8 +15,13 @@ cd ~/.dotfiles
 ./bootstrap
 ```
 
-The bootstrap script can be run by cd-ing into the `.dotfiles` directory and performing this command:
+# Things to do afterwards
 
-```bash
-./bootstrap
+```
+* expose default-domain local.gnx.cloud --server=eu-1
+* Install monalisa font included in ~/.dotfiles/misc
+* If you have not backed up via Mackup yet, then run `mackup backup` to symlink preferences for a wide collection of apps to your dropbox. If you already had a backup via mackup run `mackup restore` You will find more info on Mackup here: https://github.com/lra/mackup.
+* Set some sensible os x defaults by running: $HOME/.dotfiles/macos/set-defaults.sh
+* (dubbelcheck) Symlink .dotfiles/shell/.zshrc
+
 ```
