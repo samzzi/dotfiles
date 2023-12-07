@@ -163,6 +163,9 @@ brew install --cask handbrake
 echo '✅ Install idrive'
 brew install --cask idrive
 
+echo '✅ Install anytype.io'
+brew install --cask anytype
+
 ###############################
 ## INSTALL MAC STORE SHIZZLE ##
 ###############################
