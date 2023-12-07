@@ -4,39 +4,30 @@
 ## INSTALL PACKAGE MANAGERS ##
 ##############################
 
-echo '--'
-echo 'Install homebrew'
-echo '--'
-echo install homebrew
+echo '✅ Install homebrew'
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-echo '--'
-echo 'Install Mac App Store cli'
-echo '--'
+echo '✅ Install Mac App Store cli'
 brew install mas
 
 # Symlink the Mackup config
 ln -s $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
 
-echo '--'
-echo 'Install mackup'
-echo '--'
+echo '✅ Install mackup'
 brew install mackup
 
 ###############################
 ## INSTALL DEVELOPMENT TOOLS ##
 ###############################
 
-echo '--'
-echo 'Install iterm2'
-echo '--'
+echo '✅ Install iterm2'
 
 brew install --cask iterm2
 
-echo 'Install oh-my-zsh'
+echo '✅ Install oh-my-zsh'
 echo '-----------------'
 rm -rf $HOME/.oh-my-zsh
 curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
@@ -44,174 +35,139 @@ rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 source $HOME/.zshrc
 
-echo '--'
-echo 'Install nvm'
-echo '--'
+echo '✅ Install nvm'
 brew install nvm
 nvm install --lts
 
-echo '--'
 echo 'Configure npm'
-echo '--'
 # Create a directory for global packages and tell npm where to store globally installed packages
 mkdir "${HOME}/.npm-packages"
 npm config set prefix "${HOME}/.npm-packages"
 
-echo '--'
-echo 'Install wget'
-echo '--'
+echo '✅ Install wget'
 brew install wget
 
-echo '--'
-echo 'Install ncdu'
+echo '✅ Install ncdu'
 echo '------------'
 brew install ncdu
 
-echo '--'
-echo 'Install ack'
-echo '--'
+echo '✅ Install ack'
 brew install ack
 
-echo '--'
-echo 'Install jq'
-echo '--'
+echo '✅ Install jq'
 brew install jq
 
-echo '--'
-echo 'Install some nice quicklook plugins'
-echo '--'
+echo '✅ Install some nice quicklook plugins'
 brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv
 
-echo '--'
-echo 'Install herd'
+echo '✅ Install herd'
 echo '------------'
 brew install --cask herd
 
-echo '--'
-echo 'Install tinkerwell'
-echo '--'
+echo '✅ Install tinkerwell'
 brew install --cask tinkerwell
 
-echo '--'
-echo 'Install helo'
-echo '--'
+echo '✅ Install helo'
 brew install --cask helo
 
-echo '--'
-echo 'Install aicommits'
-echo '--'
+echo '✅ Install aicommits'
 npm install -g aicommits
 
-echo '--'
-echo 'Install DBngin'
-echo '--'
+echo '✅ Install DBngin'
 brew install --cask dbngin
 
-echo '--'
-echo 'Install yarn'
-echo '--'
+echo '✅ Install yarn'
 brew install yarn
 
-echo '--'
-echo 'Install memory (timely)'
-echo '--'
+echo '✅ Install memory (timely)'
 brew install --cask memory
 
-echo '--'
-echo 'Install VScode'
-echo '--'
+echo '✅ Install VScode'
 brew install --cask visual-studio-code
 
-echo '--'
-echo 'Install raycast'
-echo '--'
+echo '✅ Install raycast'
 brew install --cask raycast
 
-# echo '--'
-# echo 'Install fig'
-# echo '--'
+#
+# echo '✅ Install fig'
+#
 # brew install --cask fig
 
-echo '--'
-echo 'Install github cli'
-echo '--'
+echo '✅ Install github cli'
 brew install gh
 
-echo '--'
-echo 'Install Ray'
-echo '--'
+echo '✅ Install Ray'
 brew install --cask ray
 
-echo '--'
-echo 'Install MySQL tools'
-echo '--'
+echo '✅ Install MySQL tools'
 brew install mysql-client
 
 ##############################
 ## INSTALL GENERAL SOFTWARE ##
 ##############################
 
-echo 'Install ghostscript'
+echo '✅ Install ghostscript'
 brew install ghostscript
 
-echo 'Install affinity photo'
+echo '✅ Install affinity photo'
 brew install --cask affinity-photo
 
-echo 'Install affinity designer'
+echo '✅ Install affinity designer'
 brew install --cask affinity-designer
 
-echo 'Install github desktop'
+echo '✅ Install github desktop'
 brew install --cask github
 
-echo 'Install setapp'
+echo '✅ Install setapp'
 brew install --cask setapp
 
-echo 'Install missive'
+echo '✅ Install missive'
 brew install --cask missive
 
-echo 'Install 1password'
+echo '✅ Install 1password'
 brew install --cask 1password
 
-echo 'Install discord'
+echo '✅ Install discord'
 brew install --cask discord
 
-echo 'Install screenflow'
+echo '✅ Install screenflow'
 brew install --cask screenflow
 
-echo 'Install Office'
+echo '✅ Install Office'
 brew install --cask microsoft-office
 
-echo 'Install Google drive'
+echo '✅ Install Google drive'
 brew install --cask google-drive
 
-echo 'Install google chrome'
+echo '✅ Install google chrome'
 brew install --cask google-chrome
 
-# # echo 'Install figma'
+# # echo '✅ Install figma'
 # # brew install --cask figma
 
-echo 'Install Notion'
+echo '✅ Install Notion'
 brew install --cask notion
 
-echo 'Install Facebook messenger'
+echo '✅ Install Facebook messenger'
 brew install --cask messenger
 
-echo 'Install spotify'
+echo '✅ Install spotify'
 brew install --cask spotify
 
-echo 'Install Microsoft Teams'
+echo '✅ Install Microsoft Teams'
 brew install --cask microsoft-teams
 
-echo 'Install Handbrake'
+echo '✅ Install Handbrake'
 brew install --cask handbrake
+
+echo '✅ Install idrive'
+brew install --cask idrive
 
 ###############################
 ## INSTALL MAC STORE SHIZZLE ##
 ###############################
 
-echo '--'
-echo 'Install Mac App store apps'
-echo '--'
+echo '✅ Install Mac App store apps'
 
 mas install 1278508951 # trello
 mas install 1444383602 # Good notes
@@ -222,7 +178,7 @@ mas install 405772121 # LittleIpsum
 # mas install 1491071483 # Tot
 mas install 1398373917 # UpNote
 mas install 585829637 # Todoist
-# mas install 1147396723 # Whatsapp (no silicon)
+mas install 310633997 # Whatsapp
 
 ###########################
 ## DO SOME GENERAL STUFF ##
