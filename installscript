@@ -151,89 +151,58 @@ brew install mysql-client
 ## INSTALL GENERAL SOFTWARE ##
 ##############################
 
-echo '--'
 echo 'Install ghostscript'
-echo '--'
 brew install ghostscript
 
-echo '--'
 echo 'Install affinity photo'
-echo '--'
 brew install --cask affinity-photo
 
-echo '--'
 echo 'Install affinity designer'
-echo '--'
 brew install --cask affinity-designer
 
-echo '--'
+echo 'Install github desktop'
+brew install --cask github
+
 echo 'Install setapp'
-echo '--'
 brew install --cask setapp
 
-echo '--'
 echo 'Install missive'
-echo '--'
 brew install --cask missive
 
-echo '--'
 echo 'Install 1password'
-echo '--'
 brew install --cask 1password
 
-echo '--'
 echo 'Install discord'
-echo '--'
 brew install --cask discord
 
-echo '--'
 echo 'Install screenflow'
-echo '--'
 brew install --cask screenflow
 
-echo '--'
 echo 'Install Office'
-echo '--'
 brew install --cask microsoft-office
 
-echo '--'
 echo 'Install Google drive'
-echo '--'
 brew install --cask google-drive
 
-echo '--'
 echo 'Install google chrome'
-echo '--'
 brew install --cask google-chrome
 
-# echo '--'
-# echo 'Install figma'
-# echo '--'
-# brew install --cask figma
+# # echo 'Install figma'
+# # brew install --cask figma
 
-echo '--'
 echo 'Install Notion'
-echo '--'
 brew install --cask notion
 
-echo '--'
 echo 'Install Facebook messenger'
-echo '--'
 brew install --cask messenger
 
-echo '--'
 echo 'Install spotify'
-echo '--'
 brew install --cask spotify
 
-echo '--'
 echo 'Install Microsoft Teams'
-echo '--'
 brew install --cask microsoft-teams
 
-echo '--'
 echo 'Install Handbrake'
-echo '--'
 brew install --cask handbrake
 
 ###############################
