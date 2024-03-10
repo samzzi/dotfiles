@@ -55,7 +55,7 @@ function commit() {
     git add .
 
     if [ "$commitMessage" = "" ]; then
-        aicommits
+        aicommits --all
         return
     fi
 
@@ -68,7 +68,7 @@ function push() {
     git add .
 
     if [ "$commitMessage" = "" ]; then
-        aicommits
+        aicommits --all
         return
     fi
 
@@ -175,11 +175,17 @@ function gitPlugin() {
 }
 
 function commitPlugin() {
-    pushd "plugins/$plugin" > /dev/null	    
+    cd "plugins/$1"	    
     git add .
-    aicommits
+    aicommits --all
     git push
-    popd > /dev/null
+    cd ../..
+}
+
+function pluginStatus() {
+    cd "plugins/$1"
+    git status
+    cd ../..
 }
 
 function decrypt() {

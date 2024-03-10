@@ -13,19 +13,15 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 echo '✅ Install Mac App Store cli'
 brew install mas
 
-# Symlink the Mackup config
-ln -s $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
-
-echo '✅ Install mackup'
-brew install mackup
-
 ###############################
 ## INSTALL DEVELOPMENT TOOLS ##
 ###############################
 
 echo '✅ Install iterm2'
-
 brew install --cask iterm2
+
+echo '✅ Install warp'
+brew install --cask warp
 
 echo '✅ Install oh-my-zsh'
 echo '-----------------'
@@ -58,7 +54,7 @@ echo '✅ Install jq'
 brew install jq
 
 echo '✅ Install some nice quicklook plugins'
-brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv
+brew install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv
 
 echo '✅ Install herd'
 echo '------------'
@@ -66,12 +62,6 @@ brew install --cask herd
 
 echo '✅ Install tinkerwell'
 brew install --cask tinkerwell
-
-echo '✅ Install helo'
-brew install --cask helo
-
-echo '✅ Install aicommits'
-npm install -g aicommits
 
 echo '✅ Install DBngin'
 brew install --cask dbngin
@@ -87,11 +77,6 @@ brew install --cask visual-studio-code
 
 echo '✅ Install raycast'
 brew install --cask raycast
-
-#
-# echo '✅ Install fig'
-#
-# brew install --cask fig
 
 echo '✅ Install github cli'
 brew install gh
@@ -142,9 +127,6 @@ brew install --cask google-drive
 echo '✅ Install google chrome'
 brew install --cask google-chrome
 
-# # echo '✅ Install figma'
-# # brew install --cask figma
-
 echo '✅ Install Notion'
 brew install --cask notion
 
@@ -163,8 +145,8 @@ brew install --cask handbrake
 echo '✅ Install idrive'
 brew install --cask idrive
 
-echo '✅ Install anytype.io'
-brew install --cask anytype
+echo '✅ Install morgen.so'
+brew install --cask morgen
 
 ###############################
 ## INSTALL MAC STORE SHIZZLE ##
@@ -173,15 +155,15 @@ brew install --cask anytype
 echo '✅ Install Mac App store apps'
 
 mas install 1278508951 # trello
-mas install 1444383602 # Good notes
-mas install 975937182 # Fantastical
 mas install 1575557335 # Kaleidoscope
-#mas install 1091189122 # Bear
 mas install 405772121 # LittleIpsum
-# mas install 1491071483 # Tot
-mas install 1398373917 # UpNote
 mas install 585829637 # Todoist
 mas install 310633997 # Whatsapp
+# mas install 1398373917 # UpNote
+# mas install 975937182 # Fantastical
+# mas install 1091189122 # Bear
+# mas install 1444383602 # Good notes
+# mas install 1491071483 # Tot
 
 ###########################
 ## DO SOME GENERAL STUFF ##
@@ -193,10 +175,6 @@ touch $HOME/.hushlogin
 # Add global gitignore
 ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
 git config --global core.excludesfile $HOME/.global-gitignore
-
-########################
-## SETUP BASE SITES's ##
-########################
 
 echo '+++++++++++++++++++++++++++'
 echo '++       All done!       ++'
