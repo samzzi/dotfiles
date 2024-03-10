@@ -29,11 +29,6 @@ function removehost() {
     ssh-keygen -R "$1"
 }
 
-function weather() {
-    local city="${1:-Antwerp}"
-    curl http://wttr.in/${city// /+}\?F
-}
-
 alias mysqladm='mysql -u root'
 
 # Scrape a single webpage with all assets
@@ -175,7 +170,7 @@ function gitPlugin() {
 }
 
 function commitPlugin() {
-    cd "plugins/$1"	    
+    cd "plugins/$1"
     git add .
     aicommits --all
     git push
