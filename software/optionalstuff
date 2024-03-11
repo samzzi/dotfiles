@@ -1,0 +1,10 @@
+#!/bin/bash
+
+brew install --cask tower
+brew install --cask slack
+
+mas install 1398373917 # UpNote
+mas install 975937182 # Fantastical
+mas install 1091189122 # Bear
+mas install 1444383602 # Good notes
+mas install 1491071483 # Tot
