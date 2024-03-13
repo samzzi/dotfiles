@@ -2,9 +2,9 @@
 #
 # bootstrap installs things.
 
-function bootstrapTerminal() {	
+function bootstrapTerminal() {
 	sudo -v #ask password beforehand
-	source ~/.dotfiles/installscript
+	source ~/.dotfiles/software/mainstuff
 }
 
 
