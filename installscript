@@ -27,9 +27,9 @@ echo '✅ Install oh-my-zsh'
 echo '-----------------'
 rm -rf $HOME/.oh-my-zsh
 curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-rm $HOME/.zshrc
-ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
-source $HOME/.zshrc
+# rm $HOME/.zshrc
+# ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
+# source $HOME/.zshrc
 
 echo '✅ Install nvm'
 brew install nvm
