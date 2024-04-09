@@ -63,8 +63,9 @@ brew install --cask herd
 echo '✅ Install tinkerwell'
 brew install --cask tinkerwell
 
-echo '✅ Install DBngin'
-brew install --cask dbngin
+# Not needed anymore because of Herd?
+# echo '✅ Install DBngin'
+# brew install --cask dbngin
 
 echo '✅ Install yarn'
 brew install yarn
@@ -93,6 +94,9 @@ brew install mysql-client
 ##############################
 ## INSTALL GENERAL SOFTWARE ##
 ##############################
+
+echo '✅ Install swiftdefaultappsprefpane'
+brew install swiftdefaultappsprefpane
 
 echo '✅ Install ghostscript'
 brew install ghostscript
@@ -129,6 +133,9 @@ brew install --cask google-drive
 
 echo '✅ Install google chrome'
 brew install --cask google-chrome
+
+echo '✅ Install arc browser'
+brew install --cask arc
 
 echo '✅ Install Notion'
 brew install --cask notion
