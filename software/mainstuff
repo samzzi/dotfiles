@@ -31,14 +31,15 @@ curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/in
 # ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 # source $HOME/.zshrc
 
-echo '✅ Install nvm'
-brew install nvm
-nvm install --lts
+# Herd does this now?
+# echo '✅ Install nvm'
+# brew install nvm
+# nvm install --lts
 
-echo 'Configure npm'
+# echo 'Configure npm'
 # Create a directory for global packages and tell npm where to store globally installed packages
-mkdir "${HOME}/.npm-packages"
-npm config set prefix "${HOME}/.npm-packages"
+# mkdir "${HOME}/.npm-packages"
+# npm config set prefix "${HOME}/.npm-packages"
 
 echo '✅ Install wget'
 brew install wget
@@ -95,8 +96,8 @@ brew install mysql-client
 ## INSTALL GENERAL SOFTWARE ##
 ##############################
 
-echo '✅ Install swiftdefaultappsprefpane'
-brew install swiftdefaultappsprefpane
+# echo '✅ Install swiftdefaultappsprefpane'
+# brew install swiftdefaultappsprefpane
 
 echo '✅ Install ghostscript'
 brew install ghostscript
@@ -107,14 +108,20 @@ brew install --cask affinity-photo
 echo '✅ Install affinity designer'
 brew install --cask affinity-designer
 
+echo '✅ Install affinity publisher'
+brew install --cask affinity-publisher
+
 echo '✅ Install github desktop'
 brew install --cask github
 
 echo '✅ Install setapp'
 brew install --cask setapp
 
-echo '✅ Install missive'
-brew install --cask missive
+# echo '✅ Install missive'
+# brew install --cask missive
+
+echo '✅ Install spark'
+brew install --cask readdle-spark
 
 echo '✅ Install 1password'
 brew install --cask 1password
@@ -158,6 +165,9 @@ brew install --cask idrive
 echo '✅ Install morgen.so'
 brew install --cask morgen
 
+echo '✅ Install nvidia geforce now'
+brew install --cask nvidia-geforce-now
+
 ###############################
 ## INSTALL MAC STORE SHIZZLE ##
 ###############################
@@ -169,6 +179,9 @@ mas install 1575557335 # Kaleidoscope
 mas install 405772121 # LittleIpsum
 mas install 585829637 # Todoist
 mas install 310633997 # Whatsapp
+mas install 409183694 # Keynote
+mas install 1398373917 # UpNote
+mas install 1444383602 # GoodNotes
 
 ###########################
 ## DO SOME GENERAL STUFF ##

@@ -10,14 +10,16 @@
 * CleanMyMac X
 * Paste
 * Elmedia player
-* Sidenotes
 * Forklift
 * Dropshare
 * Nitro PDF Pro
-* Lungo
+* Squash
 
 ## Other
 
+* Lungo
+* Renamer
+* Sidenotes
 * PixelSnap
 * Clop
 * Squash

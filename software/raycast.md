@@ -4,6 +4,7 @@
 * Floating notes
 * Generate password
 * Window management
+* Raycast AI
 
 ## Other
 
@@ -14,3 +15,5 @@
 * Spotify player
 * Tailwind CSS
 * Todoist
+* Get SSH Key
+* Open Laravel herd site
