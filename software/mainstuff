@@ -168,6 +168,12 @@ brew install --cask morgen
 echo '✅ Install nvidia geforce now'
 brew install --cask nvidia-geforce-now
 
+echo '✅ Install Noun project'
+brew install --cask noun-project
+
+echo '✅ Install Balsamiq'
+brew install --cask balsamiq-wireframes
+
 ###############################
 ## INSTALL MAC STORE SHIZZLE ##
 ###############################

@@ -92,12 +92,24 @@ export PATH="/Users/sam/Library/Application Support/Herd/bin/":$PATH
 
 # Herd injected PHP 8.2 configuration.
 export HERD_PHP_82_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/82/"
+export PHP_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/":$PHP_INI_SCAN_DIR
+
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/83/"
 
 
 # Herd injected PHP 8.4 configuration.
 export HERD_PHP_84_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/84/"
 
 
+<<<<<<< HEAD
+=======
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/82/"
+
+
+>>>>>>> 399640857967157282b173df3520f52cf335dfa2
 # Herd injected PHP 8.1 configuration.
 export HERD_PHP_81_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/81/"
 
