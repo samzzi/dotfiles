@@ -125,6 +125,7 @@ brew install --cask readdle-spark
 
 echo '✅ Install 1password'
 brew install --cask 1password
+brew install 1password-cli
 
 echo '✅ Install discord'
 brew install --cask discord
