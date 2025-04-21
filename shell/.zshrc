@@ -114,3 +114,9 @@ export HERD_PHP_80_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/con
 
 # Herd injected PHP 7.4 configuration.
 export HERD_PHP_74_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/74/"
+
+# Added by Windsurf
+export PATH="/Users/sam/.codeium/windsurf/bin:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/sam/.codeium/windsurf/bin:$PATH"

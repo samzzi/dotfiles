@@ -3,6 +3,10 @@ function mkd() {
     mkdir -p "$@" && cd "$@"
 }
 
+findPackage() {
+  grep -rl "$1" /Users/sam/workspaces --include=composer.json
+}
+
 # All the dig info
 function digga() {
     dig +nocmd "$1" any +multiline +noall +answer
