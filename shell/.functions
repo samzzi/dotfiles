@@ -154,11 +154,20 @@ function silent() {
     "$@" >&/dev/null
 }
 
-function localPlugin() {
+function localKirbyPlugin() {
     for plugin in "$@"
     do
         rm -rf "plugins/$plugin"
         ln -s ~/workspaces/kirby/"$plugin" "plugins/$plugin"
+        echo "✅ ️Plugin '$plugin' replaced with the local version"
+    done
+}
+
+function localGooeyPlugin() {
+    for plugin in "$@"
+    do
+        rm -rf "plugins/$plugin"
+        ln -s ~/workspaces/gooey/"$plugin" "plugins/$plugin"
         echo "✅ ️Plugin '$plugin' replaced with the local version"
     done
 }

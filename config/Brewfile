@@ -1,0 +1,54 @@
+# Dotfiles Brewfile
+# Install with: brew bundle --file=~/.dotfiles/Brewfile
+
+# Core tools
+brew "node"
+brew "php"
+brew "composer"
+brew "pkg-config"
+brew "wget"
+brew "httpie"
+brew "ncdu"
+brew "hub"
+brew "gh"
+brew "ack"
+brew "doctl"
+cask "1password-cli"
+brew "git-secret"
+brew "imagemagick"
+brew "mysql"
+brew "yarn"
+brew "ghostscript"
+brew "mackup"
+
+# Zsh
+brew "zsh-autosuggestions"
+
+# Modern CLI tools
+brew "starship"
+brew "zoxide"
+brew "bat"
+brew "eza"
+brew "ripgrep"
+brew "fd"
+brew "git-delta"
+brew "fnm"
+brew "fzf"
+brew "direnv"
+brew "jq"
+brew "yq"
+brew "bottom"
+
+# Development tools
+cask "claude-code"
+cask "zed"
+
+# QuickLook plugins
+cask "qlcolorcode"
+cask "qlstephen"
+cask "qlmarkdown"
+cask "quicklook-json"
+cask "qlprettypatch"
+cask "quicklook-csv"
+cask "betterzip"
+cask "suspicious-package"

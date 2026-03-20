@@ -1,0 +1,143 @@
+#!/bin/bash
+#
+# Install dotfiles
+
+set -e  # Exit on error (but we use || true for optional steps)
+
+# Colors
+BLUE='\033[0;34m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m'
+
+step() { echo ""; echo -e "${BLUE}➜${NC} $1"; }
+success() { echo -e "${GREEN}✓${NC} $1"; }
+warn() { echo -e "${YELLOW}⚠${NC} $1"; }
+error() { echo -e "${RED}✗${NC} $1"; exit 1; }
+
+echo ""
+step "Install Dotfiles"
+echo ""
+warn "This will install/update your terminal setup"
+echo ""
+read -p "Continue? (y/n) " -n 1 -r
+echo ""
+
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo ""
+    step "Cancelled"
+    echo ""
+    exit 0
+fi
+
+echo ""
+sudo -v
+
+# Start
+touch ~/.hushlogin
+step "Installing Oh My Zsh"
+if [ ! -d ~/.oh-my-zsh ]; then
+    rm -rf ~/.oh-my-zsh
+    curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --unattended || warn "Oh My Zsh installation failed"
+fi
+success "Oh My Zsh installed"
+
+# Git configuration
+step "Configuring Git"
+ln -sf ~/.dotfiles/home/.gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/home/.global-gitignore ~/.global-gitignore
+success "Git configured"
+
+# Symlinks
+step "Creating symlinks"
+rm -f ~/.zshrc ~/.vimrc ~/.vim ~/.mackup.cfg
+ln -sf ~/.dotfiles/home/.zshrc ~/.zshrc
+ln -sf ~/.dotfiles/home/.vimrc ~/.vimrc
+ln -sf ~/.dotfiles/home/.vim ~/.vim
+ln -sf ~/.dotfiles/macos/.mackup.cfg ~/.mackup.cfg
+mkdir -p ~/bin
+ln -sf ~/.dotfiles/bin/php-format ~/bin/php-format
+mkdir -p ~/.config/zed
+ln -sf ~/.dotfiles/config/zed/settings.json ~/.config/zed/settings.json
+ln -sf ~/.dotfiles/config/zed/keymap.json ~/.config/zed/keymap.json
+mkdir -p ~/.config/ghostty
+ln -sf ~/.dotfiles/config/ghostty/config ~/.config/ghostty/config
+success "Symlinks created"
+
+# NPM setup
+step "Configuring npm"
+mkdir -p ~/.npm-packages
+npm config set prefix ~/.npm-packages || warn "npm config failed"
+success "npm configured"
+
+# Homebrew
+step "Installing Homebrew"
+if ! command -v brew &>/dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+success "Homebrew installed"
+
+# Install all packages from Brewfile
+step "Installing packages from Brewfile"
+brew bundle --file=~/.dotfiles/config/Brewfile || warn "Some packages failed (likely already installed)"
+success "Brewfile processed"
+
+# fnm - Node.js version manager
+step "Setting up fnm"
+eval "$(fnm env --use-on-cd)" || warn "fnm activation failed"
+fnm install --lts || warn "fnm install failed"
+fnm use lts-latest || warn "fnm use failed"
+success "fnm configured"
+
+# PHP extensions
+step "Installing PHP extensions"
+pecl install imagick 2>/dev/null || warn "imagick already installed or failed"
+pecl install memcached 2>/dev/null || warn "memcached already installed or failed"
+pecl install xdebug 2>/dev/null || warn "xdebug already installed or failed"
+pecl install redis 2>/dev/null || warn "redis already installed or failed"
+success "PHP extensions processed"
+
+# Global npm packages
+step "Installing global npm packages"
+npm install -g agent-browser || warn "agent-browser already installed or failed"
+agent-browser install 2>/dev/null || warn "agent-browser setup skipped"
+success "npm packages processed"
+
+# Global Composer packages
+step "Installing global Composer packages"
+composer global require laravel/pint || warn "pint already installed or failed"
+composer global require laravel/envoy || warn "envoy already installed or failed"
+composer global require spatie/phpunit-watcher || warn "phpunit-watcher already installed or failed"
+composer global require laravel/valet || warn "valet already installed or failed"
+valet install || warn "valet already installed or failed"
+success "Composer packages processed"
+
+# MySQL
+step "Starting MySQL"
+brew services start mysql || warn "MySQL already running or failed"
+success "MySQL processed"
+
+# Claude Code setup
+echo ""
+read -p "Install Claude Code? (y/n) " -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    bash ~/.dotfiles/bin/install-claude-code || warn "Claude Code setup had issues"
+else
+    warn "Skipping Claude Code installation"
+fi
+
+# Done
+echo ""
+success "Installation complete!"
+echo ""
+step "Next steps:"
+echo "  • Restore settings: mackup restore (if you have backups)"
+echo "  • Customize aliases: ~/.dotfiles-custom/shell/.aliases"
+echo ""
+echo "Optional:"
+echo "  • Discover more agent skills: https://skills.sh"
+echo ""

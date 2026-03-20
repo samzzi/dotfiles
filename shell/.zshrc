@@ -120,3 +120,13 @@ export PATH="/Users/sam/.codeium/windsurf/bin:$PATH"
 
 # Added by Windsurf
 export PATH="/Users/sam/.codeium/windsurf/bin:$PATH"
+
+alias gam="/Users/sam/bin/gam7/gam"
+export PATH="/opt/homebrew/opt/pcsc-lite/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/sam/.antigravity/antigravity/bin:$PATH"
+
+
+# Herd injected PHP 8.5 configuration.
+export HERD_PHP_85_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/85/"
