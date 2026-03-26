@@ -46,3 +46,6 @@ alias scrape="scrapeUrl"
 # Working on Kirby plugins
 alias localPlugin="localPlugin"
 alias gitPlugin="gitPlugin"
+
+# Convert HTTP git origin to SSH git origin
+alias git-ssh='git remote set-url origin "$(git remote get-url origin | sed -E '\''s|https://([^/]+)/(.+)|git@\1:\2|'\'')"'

@@ -51,7 +51,14 @@
       "WebSearch",
       "WebFetch",
       "mcp__laravel-boost__*",
-      "mcp__chrome-devtools__*"
+      "mcp__chrome-devtools__*",
+      "Bash(vendor/bin/pint --dirty --format agent)",
+      "Bash(python3 -c \"import json; json.load\\(open\\(''/Users/sam/workspaces/GeNx/msol-tinybooth-website/resources/js/i18n/en.json''\\)\\); print\\(''Valid JSON''\\)\")",
+      "Bash(python3 -c \":*)",
+      "Bash(python3 -c \"import json; json.load\\(open\\(''/Users/sam/workspaces/GeNx/msol-tinybooth-website/resources/js/i18n/nl.json''\\)\\); print\\(''Valid JSON''\\)\")",
+      "Bash(python3 -c \"import json; json.load\\(open\\(''resources/js/i18n/de.json''\\)\\); print\\(''Valid JSON''\\)\")",
+      "Bash(python3 -m json.tool /Users/sam/workspaces/GeNx/msol-tinybooth-website/resources/js/i18n/fr.json)",
+      "Bash(python3 -c \"import json; json.load\\(open\\(''/Users/sam/workspaces/GeNx/msol-tinybooth-website/resources/js/i18n/es.json''\\)\\); print\\(''Valid JSON''\\)\")"
     ],
     "defaultMode": "acceptEdits"
   },
@@ -64,6 +71,6 @@
     "agent-browser@agent-browser": true
   },
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true
 }
