@@ -201,3 +201,15 @@ function decrypt() {
         gpg --decrypt -o "${file%.*}" "$file"
     done
 }
+
+function valetrc() {
+    php_version=$(php -v | head -n 1 | grep -oE '[0-9]+\.[0-9]+' | head -1)
+    echo "php=php@${php_version}" > .valetrc
+    echo "✅ Created .valetrc with php=php@${php_version}"
+}
+
+function nvmrc() {
+    node_version=$(node -v | grep -oE '[0-9]+')
+    echo "$node_version" > .nvmrc
+    echo "✅ Created .nvmrc with version ${node_version}"
+}
