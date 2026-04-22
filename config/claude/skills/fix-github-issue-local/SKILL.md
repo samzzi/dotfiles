@@ -1,5 +1,5 @@
 ---
-name: fix-github-issue
+name: fix-github-issue-local
 description: Fix GitHub issues using gh CLI. Use when asked to fix, resolve, or address a GitHub issue. Creates fixes on separate branches, runs tests locally, and creates PRs when tests pass. Requires gh CLI authenticated and repo cloned locally.
 ---
 
