@@ -85,7 +85,6 @@ export NVM_DIR="/Users/sam/Library/Application Support/Herd/config/nvm"
 # Herd injected PHP 8.3 configuration.
 export HERD_PHP_83_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/83/"
 
-
 # Herd injected PHP binary.
 export PATH="/Users/sam/Library/Application Support/Herd/bin/":$PATH
 
@@ -95,14 +94,11 @@ export PHP_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/
 # Herd injected PHP 8.3 configuration.
 export HERD_PHP_83_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/83/"
 
-
 # Herd injected PHP 8.4 configuration.
 export HERD_PHP_84_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/84/"
 
-
 # Herd injected PHP 8.2 configuration.
 export HERD_PHP_82_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/82/"
-
 
 # Herd injected PHP 8.1 configuration.
 export HERD_PHP_81_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/81/"
@@ -111,22 +107,11 @@ export HERD_PHP_81_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/con
 # Herd injected PHP 8.0 configuration.
 export HERD_PHP_80_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/80/"
 
-
 # Herd injected PHP 7.4 configuration.
 export HERD_PHP_74_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/74/"
 
-# Added by Windsurf
-export PATH="/Users/sam/.codeium/windsurf/bin:$PATH"
-
-# Added by Windsurf
-export PATH="/Users/sam/.codeium/windsurf/bin:$PATH"
-
 alias gam="/Users/sam/bin/gam7/gam"
 export PATH="/opt/homebrew/opt/pcsc-lite/bin:$PATH"
-
-# Added by Antigravity
-export PATH="/Users/sam/.antigravity/antigravity/bin:$PATH"
-
 
 # Herd injected PHP 8.5 configuration.
 export HERD_PHP_85_INI_SCAN_DIR="/Users/sam/Library/Application Support/Herd/config/php/85/"
