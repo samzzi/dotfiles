@@ -102,26 +102,14 @@ brew install mysql-client
 echo '✅ Install ghostscript'
 brew install ghostscript
 
-echo '✅ Install affinity photo'
-brew install --cask affinity-photo
-
-echo '✅ Install affinity designer'
-brew install --cask affinity-designer
-
-echo '✅ Install affinity publisher'
-brew install --cask affinity-publisher
-
 echo '✅ Install github desktop'
 brew install --cask github
 
 echo '✅ Install setapp'
 brew install --cask setapp
 
-# echo '✅ Install missive'
-# brew install --cask missive
-
-echo '✅ Install spark'
-brew install --cask readdle-spark
+echo '✅ Install missive'
+brew install --cask missive
 
 echo '✅ Install 1password'
 brew install --cask 1password
@@ -129,9 +117,6 @@ brew install 1password-cli
 
 echo '✅ Install discord'
 brew install --cask discord
-
-echo '✅ Install screenflow'
-brew install --cask screenflow
 
 echo '✅ Install Office'
 brew install --cask microsoft-office
@@ -147,9 +132,6 @@ brew install --cask arc
 
 echo '✅ Install Notion'
 brew install --cask notion
-
-echo '✅ Install Facebook messenger'
-brew install --cask messenger
 
 echo '✅ Install spotify'
 brew install --cask spotify
@@ -172,8 +154,8 @@ brew install --cask nvidia-geforce-now
 echo '✅ Install Noun project'
 brew install --cask noun-project
 
-echo '✅ Install Balsamiq'
-brew install --cask balsamiq-wireframes
+echo '✅ Install Claude usage tracker'
+brew install --cask hamed-elfayome/claude-usage/claude-usage-tracker
 
 ###############################
 ## INSTALL MAC STORE SHIZZLE ##
